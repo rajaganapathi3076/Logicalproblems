@@ -10,29 +10,34 @@ namespace LogicalPrograms
 {
     internal class Program
     {
-        static int FibonaciSeries(int n)
-        {
-            int firstnumber = 0, secondnumber = 1, result = 0;
-             
-            if (n == 0)
-            
-                return 0;
-            
-            if (n == 1)
-            
-                return  1;
-            return FibonaciSeries ( n-1) +FibonaciSeries(n-2);
-        }   
         static void Main(string[] args)
         {
-            Console.WriteLine("Pleas enter the Length of the fibonocciseries");
-            int length=Convert.ToInt32(Console.ReadLine());
-            for(int i = 0; i < length; i++)
+            Console.WriteLine("Welcome to the prime numbers");
+            Console.WriteLine("PLease enter the number");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int a = 0;
+            for(int i=1; i<= n; i++)
             {
-                Console.Write("  {0} ",FibonaciSeries (i));
-            } 
-            Console.ReadKey();
-                       
+                if (n % i == 0)
+                {
+                    a++;
+                }
+
+            }
+            
+           
+            
+            if (a == 2) 
+            {
+                Console.WriteLine("This is {0} prime number ", n);
+            }
+            else
+            {
+                Console.WriteLine("This is not prime");
+            }
+            Console.ReadLine();
+
+
 
         }
     }
