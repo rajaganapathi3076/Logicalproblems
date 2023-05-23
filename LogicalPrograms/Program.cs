@@ -12,30 +12,34 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the prime numbers");
-            Console.WriteLine("PLease enter the number");
-            int n = Convert.ToInt32(Console.ReadLine());
-            int a = 0;
-            for(int i=1; i<= n; i++)
-            {
-                if (n % i == 0)
-                {
-                    a++;
-                }
-
-            }
-            
            
+            Console.WriteLine("Welcome to the perfect numbers");
+            Console.WriteLine("Please enter the numbers");
+            int num = Convert.ToInt32(Console.ReadLine());
+            int perfect = 0;
+
+            for (int i = 1; i <= num / 2; i = i + 1) 
+            {
+                if(num%i == 0)
+                {
+                    perfect=perfect + i;
+
+                }
+                if (num == perfect)
+                {
+                    Console.WriteLine("This is {0} perfect",num);
+                }
+                else
+                {
+                    Console.WriteLine("This not perfect");
+                }
+            }
+
+
             
-            if (a == 2) 
-            {
-                Console.WriteLine("This is {0} prime number ", n);
-            }
-            else
-            {
-                Console.WriteLine("This is not prime");
-            }
-            Console.ReadLine();
+                
+            
+            
 
 
 
