@@ -12,24 +12,23 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to CouponNumbers UC5");
-            string couponNumber= GenerateCouponNumber();
-            Console.WriteLine("Coupon number :  "+couponNumber);
+            Console.WriteLine("Welcome to ReverseNumber UC4");
+            Console.WriteLine("Please enter the Number to make Reverse ");
+           int x = Convert.ToInt32(Console.ReadLine());
+           ReverseNumber(x);
 
         }
-        static string GenerateCouponNumber()
+        public static int ReverseNumber(int number)
         {
-            string allowedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            int length = 12;
-            Random random = new Random();
-            string couponNumber = " ";
-
-            for(int i=0; i< length; i++)
+            int remainder = 0, reverse = 0;
+            while (number != 0)
             {
-                int randomIndex=random.Next(0,allowedChars.Length);
-                couponNumber += allowedChars[randomIndex];
+                remainder = number % 10;
+                reverse = (reverse * 10) + remainder;
+                number = number / 10;
             }
-            return couponNumber;
+            Console.WriteLine(reverse);
+            return reverse;
         }
     }
     
