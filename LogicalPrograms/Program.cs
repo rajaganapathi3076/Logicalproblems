@@ -12,37 +12,24 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-           
-            Console.WriteLine("Welcome to the perfect numbers");
-            Console.WriteLine("Please enter the numbers");
-            int num = Convert.ToInt32(Console.ReadLine());
-            int perfect = 0;
+            Console.WriteLine("Welcome to CouponNumbers UC5");
+            string couponNumber= GenerateCouponNumber();
+            Console.WriteLine("Coupon number :  "+couponNumber);
 
-            for (int i = 1; i <= num / 2; i = i + 1) 
+        }
+        static string GenerateCouponNumber()
+        {
+            string allowedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            int length = 12;
+            Random random = new Random();
+            string couponNumber = " ";
+
+            for(int i=0; i< length; i++)
             {
-                if(num%i == 0)
-                {
-                    perfect=perfect + i;
-
-                }
-                if (num == perfect)
-                {
-                    Console.WriteLine("This is {0} perfect",num);
-                }
-                else
-                {
-                    Console.WriteLine("This not perfect");
-                }
+                int randomIndex=random.Next(0,allowedChars.Length);
+                couponNumber += allowedChars[randomIndex];
             }
-
-
-            
-                
-            
-            
-
-
-
+            return couponNumber;
         }
     }
     
